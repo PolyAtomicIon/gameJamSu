@@ -142,21 +142,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8153935156453759148, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153935156453759148, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153935156453759148, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153935156453759148, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -207,13 +192,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
         type: 3}
-      propertyPath: looping
-      value: 0
+      propertyPath: lengthInSec
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
         type: 3}
-      propertyPath: lengthInSec
+      propertyPath: InitialModule.startSize.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 691f5b0cdd973df4ebdca7e89584c4b5, type: 3}
@@ -544,7 +544,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteracting: 0
   statueStates:
-  - {fileID: 0}
+  - {fileID: 8627820839835971777, guid: 50d8e23706a3bc7409e4f49b76a201e2, type: 3}
+  - {fileID: 1728468651507806854, guid: 50d8e23706a3bc7409e4f49b76a201e2, type: 3}
+  - {fileID: 4140577593025549717, guid: 50d8e23706a3bc7409e4f49b76a201e2, type: 3}
   - {fileID: 1484853242854320340, guid: 50d8e23706a3bc7409e4f49b76a201e2, type: 3}
 --- !u!114 &452519402
 MonoBehaviour:

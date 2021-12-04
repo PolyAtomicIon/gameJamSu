@@ -30,7 +30,7 @@ public class ObjectInteraction : MonoBehaviour
             if( interactableObject != null ){
                 if( interactableObject.isInteractable() ){
                     lastInteractableObject = interactableObject;
-                    if(Input.GetMouseButton(0)){
+                    if(Input.GetMouseButtonDown(0)){
                         interactableObject.Interact();
                     } 
                     else {

@@ -36,8 +36,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
     private void Update() {
         if( isInteractable() ) {
             EnableInteraction();
-            // Interact(new Color(255, 255, 0));
-            if(Input.GetKey(KeyCode.E)){
+            if(Input.GetKeyDown(KeyCode.E)){
                 Interact();
             } 
         } else {
@@ -76,11 +75,12 @@ public class BaseInteractable : MonoBehaviour, Interactable
     public virtual void  Interact() {
         // Debug.Log("interacting");
         EnableOutline("active");
-        PlaySound();
-        // start building statue
     }
     public void DisableInteraction(){
         DisableOutline();
+    }
+    public void StopSound(){
+        sound.Stop();
     }
     public void PlaySound(){
         if(sound){
