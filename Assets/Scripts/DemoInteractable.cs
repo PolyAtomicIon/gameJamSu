@@ -11,7 +11,11 @@ public class DemoInteractable : MonoBehaviour, Interactable
 
     private void Start() {
         outliner = GetComponent<Outline>();
-        outliner.OutlineMode = Outline.Mode.SilhouetteOnly;    
+        DisableOutline();
+    }
+
+    public void DisableOutline() {
+        outliner.OutlineMode = Outline.Mode.SilhouetteOnly; 
     }
 
     public void Interact(Color color) {
@@ -20,4 +24,7 @@ public class DemoInteractable : MonoBehaviour, Interactable
         outliner.OutlineColor = color;   
     }
 
+    public void DisableInteraction(){
+        DisableOutline();
+    }
 }
