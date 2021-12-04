@@ -60,8 +60,8 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
     void setOutlineColorModes(){
         outlineColorModes = new Dictionary<string, Color>();
-        outlineColorModes["unactive"] = new Color(255, 255, 255);
-        outlineColorModes["interactable"] = new Color(0, 255, 255);
+        outlineColorModes["unactive"] = new Color(0, 255, 255);
+        outlineColorModes["interactable"] = new Color(252, 3, 219);
         outlineColorModes["enabled"] = new Color(255, 255, 0);
         outlineColorModes["hover"] = new Color(0, 255, 0);
         outlineColorModes["active"] = new Color(255, 0, 0);
@@ -123,6 +123,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
     }    
     
     public void SetPrerequisitesCompleted(){
+        EnableOutline("interactable");
         isPrerequisitesCompleted = true;
     }
 
