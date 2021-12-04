@@ -52,7 +52,6 @@ public class Statue : BaseInteractable
             return;
         }
         currentMeshIndex++;
-        Debug.Log(currentMeshIndex);
         currentMesh.mesh = statueStates[currentMeshIndex];
     }
 

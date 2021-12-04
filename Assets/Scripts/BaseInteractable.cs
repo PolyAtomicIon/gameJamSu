@@ -14,7 +14,6 @@ public class BaseInteractable : MonoBehaviour, Interactable
     Vector3 center;
     float radius;
     AudioSource sound;
-    public bool isInteracting;
     
     [SerializeField]
     private Dictionary<string, Color> outlineColorModes;
@@ -37,6 +36,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
         if( isInteractable() ) {
             EnableInteraction();
             if(Input.GetKeyDown(KeyCode.E)){
+            // if(Input.GetKey(KeyCode.E)){
                 Interact();
             } 
         } else {

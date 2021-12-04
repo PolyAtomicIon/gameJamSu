@@ -190,31 +190,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8351214203829635394, guid: 691f5b0cdd973df4ebdca7e89584c4b5,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.0001
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 691f5b0cdd973df4ebdca7e89584c4b5, type: 3}
 --- !u!1001 &289027542
@@ -431,10 +406,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 309462177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b74be7d080de65948bbd6d62793e4eed, type: 3}
+  m_Script: {fileID: 11500000, guid: cb8e0896665281746b98527aa52ed2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInteracting: 1
+  isInteracting: 0
 --- !u!114 &309462179
 MonoBehaviour:
   m_ObjectHideFlags: 0
