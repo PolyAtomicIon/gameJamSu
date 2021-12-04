@@ -43,7 +43,7 @@ public class GameMenu : MonoBehaviour
             if( Physics.Raycast( ray, out hit, 100 ) )
             {
                 target = transform.gameObject;
-                Open();
+                // Open();
             };
         }
     }
