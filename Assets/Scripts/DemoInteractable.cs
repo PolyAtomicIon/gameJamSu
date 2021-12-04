@@ -14,13 +14,17 @@ public class DemoInteractable : MonoBehaviour, Interactable
         DisableOutline();
     }
 
+    public void EnableOutline() {
+        outliner.enabled = true; 
+    }
     public void DisableOutline() {
-        outliner.OutlineMode = Outline.Mode.SilhouetteOnly; 
+        outliner.enabled = false; 
     }
 
     public void Interact(Color color) {
         Debug.Log("interacting");
-        outliner.OutlineMode = Outline.Mode.OutlineAll; 
+        EnableOutline();
+        outliner.OutlineMode = Outline.Mode.OutlineVisible; 
         outliner.OutlineColor = color;   
     }
 
