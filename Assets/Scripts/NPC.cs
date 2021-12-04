@@ -9,7 +9,6 @@ public class NPC : BaseInteractable
 {
     public void Start() {
         base.Start();
-        SetPrerequisitesCompleted();
     }
 
     public override void Interact() {

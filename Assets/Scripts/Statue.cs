@@ -19,7 +19,6 @@ public class Statue : BaseInteractable
         base.Start();
         vfx = GetComponentInChildren<ParticleSystem>();
         currentMesh = GetComponent<MeshFilter>();
-        SetPrerequisitesCompleted();
     }
 
     public override void Interact() {

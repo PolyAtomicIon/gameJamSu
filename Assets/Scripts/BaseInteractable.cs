@@ -60,6 +60,8 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
     void setOutlineColorModes(){
         outlineColorModes = new Dictionary<string, Color>();
+        outlineColorModes["unactive"] = new Color(255, 255, 255);
+        outlineColorModes["interactable"] = new Color(0, 255, 255);
         outlineColorModes["enabled"] = new Color(255, 255, 0);
         outlineColorModes["hover"] = new Color(0, 255, 0);
         outlineColorModes["active"] = new Color(255, 0, 0);
@@ -91,7 +93,13 @@ public class BaseInteractable : MonoBehaviour, Interactable
         EnableOutline("active");
     }
     public virtual void DisableInteraction(){
-        DisableOutline();
+        if( isPrerequisitesCompleted ){
+            EnableOutline("interactable");
+        }
+        else{
+            EnableOutline("unactive");
+        }
+        // DisableOutline();
     }
     public void StopSound(){
         sound.Stop();
