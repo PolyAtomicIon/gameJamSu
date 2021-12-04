@@ -13,7 +13,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
     Bounds colliderBounds;
     Vector3 center;
     float radius;
-
+    public AudioSource sound;
     
     [SerializeField]
     private Dictionary<string, Color> outlineColorModes;
@@ -71,10 +71,15 @@ public class BaseInteractable : MonoBehaviour, Interactable
     public void Interact() {
         // Debug.Log("interacting");
         EnableOutline("active");
+        PlaySound();
         // start building statue
     }
     public void DisableInteraction(){
         DisableOutline();
+    }
+    public void PlaySound(){
+        if(sound)
+            sound.Play();
     }
     public void EnableOutline(string state) {
         outliner.enabled = true; 
