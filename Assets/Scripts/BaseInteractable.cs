@@ -78,8 +78,10 @@ public class BaseInteractable : MonoBehaviour, Interactable
         DisableOutline();
     }
     public void PlaySound(){
-        if(sound)
-            sound.Play();
+        if(sound){
+            if( !sound.isPlaying )
+                sound.Play();
+        }
     }
     public void EnableOutline(string state) {
         outliner.enabled = true; 
