@@ -33,9 +33,11 @@ public class DialogueWindow : MonoBehaviour {
     void Update(){
         if( sentences != null && sentences.Length != 0 ){
             string[] sentence = sentences[currentSentenceIndex].Split(':');
-
-            labelText.text = sentence[0];
-            mainText.text = sentence[1];
+            
+            if( sentence.Length == 2 ){
+                labelText.text = sentence[0];
+                mainText.text = sentence[1];
+            }
 
             if( currentSentenceIndex + 1 >= sentences.Length - 1 ){
                 closeButton.SetActive(true);

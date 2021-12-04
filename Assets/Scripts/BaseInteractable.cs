@@ -112,12 +112,15 @@ public class BaseInteractable : MonoBehaviour, Interactable
         }
     }
     public void EnableOutline(string state) {
-        outliner.enabled = true; 
-        outliner.OutlineMode = Outline.Mode.OutlineVisible;
-        SetOutlineColor(state); 
+        if(outliner != null){
+            outliner.enabled = true; 
+            outliner.OutlineMode = Outline.Mode.OutlineVisible;
+            SetOutlineColor(state); 
+        }
     }
     public void DisableOutline() {
-        outliner.enabled = false; 
+        if(outliner != null)
+            outliner.enabled = false; 
     }
     void SetOutlineColor(string state){
         outliner.OutlineColor = outlineColorModes[state];   
