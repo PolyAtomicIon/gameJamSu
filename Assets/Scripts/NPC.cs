@@ -8,8 +8,6 @@ using System.Collections.Generic;
 public class NPC : BaseInteractable
 {
 
-    private bool isPrerequisitesCompleted = false;
-
     public void Start() {
         base.Start();
         SetPrerequisitesCompleted();
@@ -17,8 +15,10 @@ public class NPC : BaseInteractable
 
     public override void Interact() {
         base.Interact();
-        Debug.Log("interacting NPC");
+        // Debug.Log("interacting NPC");
         // Dialog
+        dialogWindow.Enable();
+        dialogWindow.SetAllDialogueText(allDialogueText);
     }
 
     public override bool isInteractable()
@@ -26,10 +26,6 @@ public class NPC : BaseInteractable
         return base.isInteractable() 
             && isPrerequisitesCompleted;
             // && !sound.isPlaying;
-    }
-
-    public void SetPrerequisitesCompleted(){
-        isPrerequisitesCompleted = true;
     }
 
 }

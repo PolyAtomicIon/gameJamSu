@@ -13,7 +13,6 @@ public class Statue : BaseInteractable
     MeshFilter currentMesh;
     int currentMeshIndex = 0;
     public Mesh[] statueStates;
-    private bool isPrerequisitesCompleted = false;
     private bool isStatueCompleted = false;
 
     public void Start() {
@@ -31,6 +30,9 @@ public class Statue : BaseInteractable
             StopSound();
             PlaySound();
             UpdateMesh();
+        } else {
+            dialogWindow.Enable();
+            dialogWindow.SetAllDialogueText(allDialogueText);
         }
     }
 
@@ -40,10 +42,6 @@ public class Statue : BaseInteractable
             && isPrerequisitesCompleted 
             && !vfx.isPlaying;
             // && !sound.isPlaying;
-    }
-
-    public void SetPrerequisitesCompleted(){
-        isPrerequisitesCompleted = true;
     }
 
     void UpdateMesh(){

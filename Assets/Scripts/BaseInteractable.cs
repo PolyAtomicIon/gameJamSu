@@ -18,6 +18,9 @@ public class BaseInteractable : MonoBehaviour, Interactable
     [SerializeField]
     private Dictionary<string, Color> outlineColorModes;
     private string currentOutlineState;
+    public bool isPrerequisitesCompleted = false;
+    public DialogueWindow dialogWindow;
+    public string allDialogueText;
 
     public void Start() {
         mainCharacterTransform = GameObject.FindWithTag("Player").transform;
@@ -30,6 +33,9 @@ public class BaseInteractable : MonoBehaviour, Interactable
         setOutlineColorModes();
 
         sound = GetComponentInChildren<AudioSource>();
+
+        dialogWindow = GameObject.FindWithTag("DialogueWindow").GetComponent<DialogueWindow>();
+        dialogWindow.Disable();
     }
 
     private void Update() {
@@ -100,6 +106,10 @@ public class BaseInteractable : MonoBehaviour, Interactable
         outliner.OutlineColor = outlineColorModes[state];   
     }    
     
+    public void SetPrerequisitesCompleted(){
+        isPrerequisitesCompleted = true;
+    }
+
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
