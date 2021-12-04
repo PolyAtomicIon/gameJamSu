@@ -2,5 +2,5 @@ using UnityEngine;
 using System.Collections;
 public interface Interactable 
 {
-    void Interact();
+    void Interact(Color color);
 }

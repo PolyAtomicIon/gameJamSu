@@ -12,12 +12,12 @@ public class DemoInteractable : MonoBehaviour, Interactable
     private void Start() {
         outliner = GetComponent<Outline>();
         outliner.OutlineMode = Outline.Mode.SilhouetteOnly;    
-        outliner.OutlineColor = new Color(0, 0, 255);    
     }
 
-    public void Interact() {
-        outliner.OutlineMode = Outline.Mode.OutlineAll;    
+    public void Interact(Color color) {
         Debug.Log("interacting");
+        outliner.OutlineMode = Outline.Mode.OutlineAll; 
+        outliner.OutlineColor = color;   
     }
 
 }

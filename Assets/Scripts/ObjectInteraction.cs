@@ -18,12 +18,16 @@ public class ObjectInteraction : MonoBehaviour
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit))
          {
-            // if(Input.GetMouseButtonDown(0)){
                 Debug.Log(hit.collider.name);
                 Interactable interactableItem = hit.collider.GetComponent<Interactable>();
-                if( interactableItem != null )
-                    interactableItem.Interact();
-            // }
+                
+                if(Input.GetMouseButton(0)){
+                    if( interactableItem != null )
+                        interactableItem.Interact(new Color(255, 0, 0));
+                }else {
+                    if( interactableItem != null )
+                        interactableItem.Interact(new Color(0, 255, 0));
+                }
          }
     }
 }
