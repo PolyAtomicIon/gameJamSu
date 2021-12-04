@@ -13,19 +13,23 @@ public class BaseInteractable : MonoBehaviour, Interactable
     Bounds colliderBounds;
     Vector3 center;
     float radius;
-    public AudioSource sound;
+    AudioSource sound;
     
     [SerializeField]
     private Dictionary<string, Color> outlineColorModes;
     private string currentOutlineState;
 
-    private void Start() {
+    public void Start() {
         mainCharacterTransform = GameObject.FindWithTag("Player").transform;
+
         outliner = GetComponent<Outline>();
         DisableOutline();
+
         colliderBounds = GetComponent<Collider>().bounds;
         setObjectProperties();
         setOutlineColorModes();
+
+        sound = GetComponentInChildren<AudioSource>();
     }
 
     private void Update() {
@@ -68,7 +72,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
         // Debug.Log("hovered");
         EnableOutline("hover");
     }
-    public void Interact() {
+    public virtual void  Interact() {
         // Debug.Log("interacting");
         EnableOutline("active");
         PlaySound();
