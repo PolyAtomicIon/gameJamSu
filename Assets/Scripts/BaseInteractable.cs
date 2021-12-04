@@ -21,6 +21,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
     public bool isPrerequisitesCompleted = false;
     public DialogueWindow dialogueWindow;
     public string allDialogueText;
+    public string finalText;
     public bool isDialogueFinished = false;
 
     public void Start() {
@@ -60,8 +61,8 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
     void setOutlineColorModes(){
         outlineColorModes = new Dictionary<string, Color>();
-        outlineColorModes["unactive"] = new Color(0, 255, 255);
-        outlineColorModes["interactable"] = new Color(252, 3, 219);
+        outlineColorModes["unactive"] = new Color(0, 0, 0);
+        outlineColorModes["interactable"] = new Color(144, 3, 219);
         outlineColorModes["enabled"] = new Color(255, 255, 0);
         outlineColorModes["hover"] = new Color(0, 255, 0);
         outlineColorModes["active"] = new Color(255, 0, 0);
@@ -88,7 +89,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
         // Debug.Log("hovered");
         EnableOutline("hover");
     }
-    public virtual void  Interact() {
+    public virtual void Interact() {
         // Debug.Log("interacting");
         EnableOutline("active");
     }

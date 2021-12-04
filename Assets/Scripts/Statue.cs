@@ -22,14 +22,23 @@ public class Statue : BaseInteractable
     }
 
     public override void Interact() {
-        base.Interact();
         // Debug.Log("building statue");
+        if( !isPrerequisitesCompleted ){
+            base.Interact();
+            // dialogueWindow.Enable();
+            // if( isDialogueFinished ){
+            //     allDialogueText = "Statue:I'm done;";
+            // }
+            // dialogueWindow.SetAllDialogueText(allDialogueText, isDialogueFinished);
+        }
         if( !isStatueCompleted ){
             PlayVFX();
+            DisableOutline();
             StopSound();
             PlaySound();
             UpdateMesh();
         } else {
+            base.Interact();
             dialogueWindow.Enable();
             if( isDialogueFinished ){
                 allDialogueText = "Statue:I'm done;";

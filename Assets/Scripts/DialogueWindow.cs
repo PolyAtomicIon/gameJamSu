@@ -37,7 +37,7 @@ public class DialogueWindow : MonoBehaviour {
             labelText.text = sentence[0];
             mainText.text = sentence[1];
 
-            if( currentSentenceIndex + 1 >= sentences.Length - 2 ){
+            if( currentSentenceIndex + 1 >= sentences.Length - 1 ){
                 closeButton.SetActive(true);
                 isDialogueFinished = true;
             }

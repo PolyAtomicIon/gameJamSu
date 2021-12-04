@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - InteractableObject
   - DialogueWindow
+  - LevelManager
   layers:
   - Default
   - TransparentFX

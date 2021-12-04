@@ -7,15 +7,16 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour
 {
 
-    BaseInteractable[] interactableItems;
-    int currentInteractableItem;
+    public BaseInteractable[] interactableItems;
+    public int currentInteractableItem = 0;
 
     public void Start() {
+        EnableInteractableObject();
     }
 
 
     void MoveToNextInteractableObject() {
-        if( currentInteractableItem + 1 <= interactableItems.Length ){
+        if( currentInteractableItem + 1 >= interactableItems.Length ){
             return;
         }
         currentInteractableItem++;
@@ -23,7 +24,8 @@ public class LevelManager : MonoBehaviour
     }
 
     void EnableInteractableObject() {
-        interactableItems[currentInteractableItem].SetPrerequisitesCompleted();
+        if( interactableItems != null )
+            interactableItems[currentInteractableItem].SetPrerequisitesCompleted();
     }
 
     public void Update() {

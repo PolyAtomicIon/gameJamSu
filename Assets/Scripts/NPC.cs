@@ -17,7 +17,7 @@ public class NPC : BaseInteractable
         // Dialog
         dialogueWindow.Enable();
         if( isDialogueFinished ){
-            allDialogueText = "NPC:I'm done;";
+            allDialogueText = finalText;
         }
         dialogueWindow.SetAllDialogueText(allDialogueText, isDialogueFinished);
     }
