@@ -410,8 +410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPrerequisitesCompleted: 1
-  dialogWindow: {fileID: 0}
+  dialogueWindow: {fileID: 0}
   allDialogueText: John:au;Me:what?;
+  isDialogueFinished: 0
 --- !u!114 &309462179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,8 +526,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPrerequisitesCompleted: 0
-  dialogWindow: {fileID: 0}
+  dialogueWindow: {fileID: 0}
   allDialogueText: 'statue:Ikek;me: lol;'
+  isDialogueFinished: 0
   statueStates:
   - {fileID: 8627820839835971777, guid: 50d8e23706a3bc7409e4f49b76a201e2, type: 3}
   - {fileID: 1728468651507806854, guid: 50d8e23706a3bc7409e4f49b76a201e2, type: 3}
@@ -1681,12 +1683,6 @@ PrefabInstance:
       objectReference: {fileID: 700051398}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
---- !u!1 &1488561947 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1488561947, guid: 24c5dacaa704b9649afa85500d1b3140,
-    type: 3}
-  m_PrefabInstance: {fileID: 7543720486283656402}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1762682258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2582,29 +2578,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1993192812}
     m_Modifications:
-    - target: {fileID: 7543720485142644712, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543720485142644713, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7543720485142644714, guid: 24c5dacaa704b9649afa85500d1b3140,
         type: 3}
       propertyPath: m_Name
-      value: DialogueWindow
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543720485142644714, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543720485142644714, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: m_TagString
       value: DialogueWindow
       objectReference: {fileID: 0}
     - target: {fileID: 7543720485142644715, guid: 24c5dacaa704b9649afa85500d1b3140,
@@ -2711,26 +2687,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543720485142644718, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: m_ShowMaskGraphic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543720485142644719, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: closeButton
-      value: 
-      objectReference: {fileID: 1488561947}
-    - target: {fileID: 7543720485142644719, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: allDialogueText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543720485515067341, guid: 24c5dacaa704b9649afa85500d1b3140,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.5529412
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c5dacaa704b9649afa85500d1b3140, type: 3}

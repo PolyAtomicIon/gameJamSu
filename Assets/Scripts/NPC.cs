@@ -17,8 +17,11 @@ public class NPC : BaseInteractable
         base.Interact();
         // Debug.Log("interacting NPC");
         // Dialog
-        dialogWindow.Enable();
-        dialogWindow.SetAllDialogueText(allDialogueText);
+        dialogueWindow.Enable();
+        if( isDialogueFinished ){
+            allDialogueText = "NPC:I'm done;";
+        }
+        dialogueWindow.SetAllDialogueText(allDialogueText);
     }
 
     public override bool isInteractable()

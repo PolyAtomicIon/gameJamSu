@@ -31,8 +31,11 @@ public class Statue : BaseInteractable
             PlaySound();
             UpdateMesh();
         } else {
-            dialogWindow.Enable();
-            dialogWindow.SetAllDialogueText(allDialogueText);
+            dialogueWindow.Enable();
+            if( isDialogueFinished ){
+                allDialogueText = "Statue:I'm done;";
+            }
+            dialogueWindow.SetAllDialogueText(allDialogueText);
         }
     }
 

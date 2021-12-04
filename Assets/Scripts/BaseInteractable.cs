@@ -19,8 +19,9 @@ public class BaseInteractable : MonoBehaviour, Interactable
     private Dictionary<string, Color> outlineColorModes;
     private string currentOutlineState;
     public bool isPrerequisitesCompleted = false;
-    public DialogueWindow dialogWindow;
+    public DialogueWindow dialogueWindow;
     public string allDialogueText;
+    public bool isDialogueFinished = false;
 
     public void Start() {
         mainCharacterTransform = GameObject.FindWithTag("Player").transform;
@@ -34,11 +35,11 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
         sound = GetComponentInChildren<AudioSource>();
 
-        dialogWindow = GameObject.FindWithTag("DialogueWindow").GetComponent<DialogueWindow>();
-        dialogWindow.Disable();
+        dialogueWindow = GameObject.FindWithTag("DialogueWindow").GetComponent<DialogueWindow>();
+        dialogueWindow.Disable();
     }
 
-    private void Update() {
+    public void Update() {
         if( isInteractable() ) {
             EnableInteraction();
             if(Input.GetKeyDown(KeyCode.E)){
@@ -48,6 +49,14 @@ public class BaseInteractable : MonoBehaviour, Interactable
         } else {
             DisableInteraction();
         }
+        // Dialogue
+        if( dialogueWindow.isDialogueFinished ){
+            onDialogueFinished();
+        }
+    }
+
+    public virtual void onDialogueFinished(){
+        isDialogueFinished = true;
     }
 
     void setOutlineColorModes(){

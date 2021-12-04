@@ -13,7 +13,7 @@ public class DialogueWindow : MonoBehaviour {
     public GameObject closeButton;
     int currentSentenceIndex = 0;
     string[] sentences;
-
+    public bool isDialogueFinished = false;
 
     public void Start() {
     }
@@ -44,11 +44,12 @@ public class DialogueWindow : MonoBehaviour {
         currentSentenceIndex--;
     }
     public void NextSentence(){
-        if( currentSentenceIndex + 1 >= sentences.Length - 1 ){
-            return;
-        }
-        if( currentSentenceIndex + 1 == sentences.Length - 2 ){
+        if( currentSentenceIndex + 1 >= sentences.Length - 2 ){
             closeButton.SetActive(true);
+        }
+        if( currentSentenceIndex + 1 >= sentences.Length - 1 ){
+            isDialogueFinished = true;
+            return;
         }
         currentSentenceIndex++;
     }
