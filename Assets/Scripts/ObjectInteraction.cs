@@ -10,14 +10,8 @@ public class ObjectInteraction : MonoBehaviour
     Ray ray;
     RaycastHit clickedObject, objectInRadius;
     Interactable interactableObject, lastInteractableObject;
-    Vector3 interactingObjectPosition;
-    float interactingObjectHeight;
-    Transform mainCharacterTransform;
-
-    public float radius = 2.5f;
 
     private void Start() {
-        mainCharacterTransform = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
@@ -30,12 +24,11 @@ public class ObjectInteraction : MonoBehaviour
         
         if(Physics.Raycast(ray, out clickedObject))
         {
-            Debug.Log(clickedObject.collider.name);
-            interactingObjectPosition = clickedObject.collider.bounds.center;
-            interactingObjectHeight = clickedObject.collider.bounds.size.y;
-            if( isInteractable() ){
-                interactableObject = clickedObject.collider.GetComponent<Interactable>();
-                if( interactableObject != null ){
+            // Debug.Log(clickedObject.collider.name);
+            
+            interactableObject = clickedObject.collider.GetComponent<Interactable>();
+            if( interactableObject != null ){
+                if( interactableObject.isInteractable() ){
                     lastInteractableObject = interactableObject;
                     if(Input.GetMouseButton(0)){
                         interactableObject.Interact(new Color(255, 0, 0));
@@ -56,25 +49,10 @@ public class ObjectInteraction : MonoBehaviour
     }
 
     void ResetInteractableObject(){
-        Debug.Log("Disabling interaction");
-        interactingObjectPosition = Vector3.zero;
         if( lastInteractableObject != null ){
             lastInteractableObject.DisableInteraction();
             lastInteractableObject = null;
         }
     }
 
-    bool isInteractable(){
-        float distanceToMainCharacter = Vector3.Distance(interactingObjectPosition, mainCharacterTransform.position);
-        // Debug.Log(distanceToMainCharacter);
-        return ( radius >= distanceToMainCharacter );
-    }
-
-     void OnDrawGizmos()
-    {
-        if( interactingObjectPosition != Vector3.zero ){
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(interactingObjectPosition, radius);
-        }
-    }
 }
