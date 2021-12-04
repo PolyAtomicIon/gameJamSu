@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class rum : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Animation anim;
-    void Start()
-    {
-        anim = gameObject.GetComponent<Animation>();
-        anim["spin"].layer = 123;
-    }
- 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            anim.Play("rum");
+    public Animation anim; 
+
+    void Update () {
+
+        if(Input.GetKeyDown (KeyCode.E)){
+          anim = GetComponent<Animation>();
+          anim.Play("rum");
         }
     }
 }
