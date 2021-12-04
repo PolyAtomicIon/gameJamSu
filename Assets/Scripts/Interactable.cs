@@ -3,9 +3,11 @@ using System.Collections;
 public interface Interactable 
 {
     bool isInteractable();
-    void Interact(Color color);
+    void Hover();
+    void Interact();
+    void EnableInteraction();
     void DisableInteraction();
-    void EnableOutline();
+    void EnableOutline(string state);
     void DisableOutline();
     void OnDrawGizmos();
 }

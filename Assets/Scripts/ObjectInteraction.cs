@@ -31,10 +31,10 @@ public class ObjectInteraction : MonoBehaviour
                 if( interactableObject.isInteractable() ){
                     lastInteractableObject = interactableObject;
                     if(Input.GetMouseButton(0)){
-                        interactableObject.Interact(new Color(255, 0, 0));
+                        interactableObject.Interact();
                     } 
                     else {
-                        interactableObject.Interact(new Color(0, 255, 0));
+                        interactableObject.Hover();
                     }
                 }
                 else {

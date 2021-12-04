@@ -2,9 +2,10 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Outline))]
-public class DemoInteractable : MonoBehaviour, Interactable
+public class BaseInteractable : MonoBehaviour, Interactable
 {
 
     Transform mainCharacterTransform;
@@ -13,6 +14,10 @@ public class DemoInteractable : MonoBehaviour, Interactable
     Vector3 center;
     float radius;
 
+    
+    [SerializeField]
+    private Dictionary<string, Color> outlineColorModes;
+    private string currentOutlineState;
 
     private void Start() {
         mainCharacterTransform = GameObject.FindWithTag("Player").transform;
@@ -20,14 +25,23 @@ public class DemoInteractable : MonoBehaviour, Interactable
         DisableOutline();
         colliderBounds = GetComponent<Collider>().bounds;
         setObjectProperties();
+        setOutlineColorModes();
     }
 
     private void Update() {
         if( isInteractable() ) {
-            Interact(new Color(255, 255, 0));
+            EnableInteraction();
+            // Interact(new Color(255, 255, 0));
         } else {
             DisableInteraction();
         }
+    }
+
+    void setOutlineColorModes(){
+        outlineColorModes = new Dictionary<string, Color>();
+        outlineColorModes["enabled"] = new Color(255, 255, 0);
+        outlineColorModes["hover"] = new Color(0, 255, 0);
+        outlineColorModes["active"] = new Color(255, 0, 0);
     }
 
     void setObjectProperties(){
@@ -35,26 +49,40 @@ public class DemoInteractable : MonoBehaviour, Interactable
         radius = Mathf.Max(colliderBounds.size.x, colliderBounds.size.z) * 1.5f;
     }
     public bool isInteractable(){
+        return isPlayerInRadius();
+    }
+
+    bool isPlayerInRadius(){
         float distanceToMainCharacter = Vector3.Distance(center, mainCharacterTransform.position);
         return ( radius >= distanceToMainCharacter );
     }
 
-    public void Interact(Color color) {
-        Debug.Log("interacting");
-        EnableOutline();
-        outliner.OutlineMode = Outline.Mode.OutlineVisible; 
-        outliner.OutlineColor = color;   
+    public void EnableInteraction() {
+        // Debug.Log("enabled");
+        EnableOutline("enabled");
     }
-
+    public void Hover() {
+        // Debug.Log("hovered");
+        EnableOutline("hover");
+    }
+    public void Interact() {
+        // Debug.Log("interacting");
+        EnableOutline("active");
+    }
     public void DisableInteraction(){
         DisableOutline();
     }
-    public void EnableOutline() {
+    public void EnableOutline(string state) {
         outliner.enabled = true; 
+        outliner.OutlineMode = Outline.Mode.OutlineVisible;
+        SetOutlineColor(state); 
     }
     public void DisableOutline() {
         outliner.enabled = false; 
     }
+    void SetOutlineColor(string state){
+        outliner.OutlineColor = outlineColorModes[state];   
+    }    
     
     public void OnDrawGizmos()
     {
