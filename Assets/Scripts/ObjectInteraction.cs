@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class ObjectInteraction : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class ObjectInteraction : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.R)){
+            SceneManager.LoadScene(0);
+        }
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit))
          {
