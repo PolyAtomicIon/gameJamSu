@@ -35,7 +35,6 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
         sound = GetComponentInChildren<AudioSource>();
 
-        dialogueWindow = GameObject.FindWithTag("DialogueWindow").GetComponent<DialogueWindow>();
         dialogueWindow.Disable();
     }
 
@@ -91,7 +90,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
         // Debug.Log("interacting");
         EnableOutline("active");
     }
-    public void DisableInteraction(){
+    public virtual void DisableInteraction(){
         DisableOutline();
     }
     public void StopSound(){

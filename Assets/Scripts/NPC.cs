@@ -7,7 +7,6 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Outline))]
 public class NPC : BaseInteractable
 {
-
     public void Start() {
         base.Start();
         SetPrerequisitesCompleted();
@@ -21,7 +20,12 @@ public class NPC : BaseInteractable
         if( isDialogueFinished ){
             allDialogueText = "NPC:I'm done;";
         }
-        dialogueWindow.SetAllDialogueText(allDialogueText);
+        dialogueWindow.SetAllDialogueText(allDialogueText, isDialogueFinished);
+    }
+
+    public override void DisableInteraction(){
+        base.DisableInteraction();
+        // dialogueWindow.Disable();
     }
 
     public override bool isInteractable()

@@ -18,7 +18,8 @@ public class DialogueWindow : MonoBehaviour {
     public void Start() {
     }
 
-    public void SetAllDialogueText(string text){
+    public void SetAllDialogueText(string text, bool dialogueState){
+        isDialogueFinished = dialogueState;
         allDialogueText = text;
         ProcessText();
     }
@@ -35,7 +36,13 @@ public class DialogueWindow : MonoBehaviour {
 
             labelText.text = sentence[0];
             mainText.text = sentence[1];
+
+            if( currentSentenceIndex + 1 >= sentences.Length - 2 ){
+                closeButton.SetActive(true);
+                isDialogueFinished = true;
+            }
         }
+        
     }
 
     public void PrevSentence(){
@@ -44,11 +51,7 @@ public class DialogueWindow : MonoBehaviour {
         currentSentenceIndex--;
     }
     public void NextSentence(){
-        if( currentSentenceIndex + 1 >= sentences.Length - 2 ){
-            closeButton.SetActive(true);
-        }
         if( currentSentenceIndex + 1 >= sentences.Length - 1 ){
-            isDialogueFinished = true;
             return;
         }
         currentSentenceIndex++;
