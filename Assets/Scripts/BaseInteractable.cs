@@ -14,6 +14,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
     Vector3 center;
     float radius;
     AudioSource sound;
+    public bool isInteracting;
     
     [SerializeField]
     private Dictionary<string, Color> outlineColorModes;
@@ -55,7 +56,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
         center = colliderBounds.center;
         radius = Mathf.Max(colliderBounds.size.x, colliderBounds.size.z) * 1.5f;
     }
-    public bool isInteractable(){
+    public virtual bool isInteractable(){
         return isPlayerInRadius();
     }
 

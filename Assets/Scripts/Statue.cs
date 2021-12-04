@@ -9,17 +9,24 @@ public class Statue : BaseInteractable
 {
 
     ParticleSystem vfx;
+    
+    MeshFilter currentMesh;
+    int currentMeshIndex = 0;
+    public Mesh[] statueStates;
 
-    private void Start() {
+    public void Start() {
         base.Start();
         vfx = GetComponentInChildren<ParticleSystem>();
+        currentMesh = GetComponent<MeshFilter>();
     }
 
     public override void Interact() {
         base.Interact();
-        Debug.Log("from statue privet");
+        // Debug.Log("building statue");
         PlayVFX();
-        // start building statue
+        
+        currentMeshIndex++;
+        currentMesh.mesh = statueStates[currentMeshIndex];
     }
     void PlayVFX() {
         if( vfx ){
