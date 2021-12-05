@@ -947,14 +947,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outliner: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
   isPrerequisitesCompleted: 0
   dialogueWindow: {fileID: 1066726424}
   allDialogueText: 
   finalText: 
   isDialogueFinished: 0
-  diamond: {fileID: 0}
-  unactive: {fileID: 0}
-  active: {fileID: 0}
 --- !u!64 &628059460
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1059,22 +1057,22 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1487117655336121297}
+    m_TransformParent: {fileID: 1818460250}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.10000001
+      value: 0.10000002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.10000001
+      value: 0.10000002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
@@ -1084,17 +1082,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.7489123
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8050001
+      value: 2.008553
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.50830436
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b259878576c4ac244b91ee2db3a29b87,
         type: 3}
@@ -1198,14 +1196,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outliner: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
   isPrerequisitesCompleted: 0
   dialogueWindow: {fileID: 1369878182}
   allDialogueText: 
   finalText: 
   isDialogueFinished: 0
-  diamond: {fileID: 0}
-  unactive: {fileID: 0}
-  active: {fileID: 0}
 --- !u!64 &809746547
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1239,6 +1235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outliner: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
   isPrerequisitesCompleted: 0
   dialogueWindow: {fileID: 1046323903}
   allDialogueText: 
@@ -3055,6 +3052,9 @@ MonoBehaviour:
   - {fileID: 828604791}
   - {fileID: 1841140123}
   currentInteractableItem: 0
+  diamond: {fileID: 766821955}
+  unactive: {fileID: 0}
+  active: {fileID: 0}
 --- !u!4 &1818460250
 Transform:
   m_ObjectHideFlags: 0
@@ -3065,7 +3065,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.6485667, y: 0.6318785, z: 2.2195857}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 766821956}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3088,6 +3089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outliner: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
   isPrerequisitesCompleted: 0
   dialogueWindow: {fileID: 188497706}
   allDialogueText: 
@@ -3158,14 +3160,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outliner: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
   isPrerequisitesCompleted: 0
   dialogueWindow: {fileID: 1219709654}
   allDialogueText: 
   finalText: 
   isDialogueFinished: 0
-  diamond: {fileID: 0}
-  unactive: {fileID: 0}
-  active: {fileID: 0}
 --- !u!114 &1881692540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3566,12 +3566,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2299260286704888171}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.924, y: -0.805, z: 2.564}
+  m_LocalPosition: {x: 1.813, y: -0.805, z: 2.564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6409501244910146373}
   - {fileID: 8765948180076270785}
-  - {fileID: 766821956}
   m_Father: {fileID: 919384739}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4929,14 +4928,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outliner: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
   isPrerequisitesCompleted: 0
   dialogueWindow: {fileID: 1441207312}
   allDialogueText: 
   finalText: 
   isDialogueFinished: 0
-  diamond: {fileID: 766821955}
-  unactive: {fileID: 2100000, guid: c72673630f55acd418f35b885a1ac16f, type: 2}
-  active: {fileID: 2100000, guid: 02e3d1f2d28f764438337f1772443648, type: 2}
 --- !u!1 &6670508559118939064
 GameObject:
   m_ObjectHideFlags: 0

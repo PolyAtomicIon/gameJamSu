@@ -11,7 +11,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
     Transform mainCharacterTransform;
     public Outline outliner;
     Bounds colliderBounds;
-    Vector3 center;
+    public Vector3 center;
     float radius;
     AudioSource sound;
     

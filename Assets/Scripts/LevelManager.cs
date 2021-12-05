@@ -9,9 +9,15 @@ public class LevelManager : MonoBehaviour
 
     public BaseInteractable[] interactableItems;
     public int currentInteractableItem = 0;
+    
+    public GameObject diamond;
+    public Material unactive, active;
+    Renderer rd;
 
     public void Start() {
         EnableInteractableObject();
+        rd = diamond.GetComponent<Renderer>();
+        rd.material = unactive;
     }
 
 
@@ -24,8 +30,16 @@ public class LevelManager : MonoBehaviour
     }
 
     void EnableInteractableObject() {
-        if( interactableItems != null )
+        if( interactableItems != null ){
             interactableItems[currentInteractableItem].SetPrerequisitesCompleted();
+            SetDiamondPosition();
+        }
+    }
+
+    void SetDiamondPosition(){
+        Vector3 pos = interactableItems[currentInteractableItem].center;
+        pos.y = 3f;
+        diamond.transform.position = pos;
     }
 
     public void Update() {
@@ -33,6 +47,13 @@ public class LevelManager : MonoBehaviour
             if( currentInteractableItem < interactableItems.Length ){
                 if( interactableItems[currentInteractableItem].isDialogueFinished ){
                     MoveToNextInteractableObject();
+                }
+                if( interactableItems[currentInteractableItem].isInteractable() ){
+                    if( rd != null )
+                        rd.material = active;
+                }else {
+                    if( rd != null )
+                        rd.material = unactive;
                 }
             }
         }
