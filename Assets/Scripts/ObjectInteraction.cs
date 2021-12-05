@@ -17,7 +17,8 @@ public class ObjectInteraction : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene(0);
+            Scene scene = SceneManager.GetActiveScene(); 
+            SceneManager.LoadScene(scene.name);
         }
         
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);

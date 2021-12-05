@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class LevelManager : MonoBehaviour
     Renderer rd;
 
     public void Start() {
+        currentInteractableItem = 0;
         EnableInteractableObject();
         rd = diamond.GetComponent<Renderer>();
         rd.material = unactive;
@@ -23,6 +25,7 @@ public class LevelManager : MonoBehaviour
 
     void MoveToNextInteractableObject() {
         if( currentInteractableItem + 1 >= interactableItems.Length ){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             return;
         }
         currentInteractableItem++;
