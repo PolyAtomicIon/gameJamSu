@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameMenu : MonoBehaviour
+public class GameMenu1 : MonoBehaviour
 {
     // 200x300 px window will apear in the center of the screen.
     private Rect windowRect = new Rect(50, 550, Screen.width- 100 , 200);

@@ -577,6 +577,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: STARTER_ASSETS_PACKAGES_CHECKED
     7: STARTER_ASSETS_PACKAGES_CHECKED
+    14: STARTER_ASSETS_PACKAGES_CHECKED
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
