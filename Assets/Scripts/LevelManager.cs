@@ -37,8 +37,9 @@ public class LevelManager : MonoBehaviour
     }
 
     void SetDiamondPosition(){
-        Vector3 pos = interactableItems[currentInteractableItem].center;
-        pos.y = 3f;
+        Vector3 pos = interactableItems[currentInteractableItem].GetCenter();
+        Debug.Log(pos);
+        pos.y += 2.25f;
         diamond.transform.position = pos;
     }
 

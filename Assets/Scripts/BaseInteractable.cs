@@ -11,7 +11,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
     Transform mainCharacterTransform;
     public Outline outliner;
     Bounds colliderBounds;
-    public Vector3 center;
+    private Vector3 center;
     float radius;
     AudioSource sound;
     
@@ -24,14 +24,17 @@ public class BaseInteractable : MonoBehaviour, Interactable
     public string finalText;
     public bool isDialogueFinished = false;
 
+    public void Awake() {
+        colliderBounds = GetComponent<Collider>().bounds;
+        setObjectProperties();
+    }
+
     public void Start() {
         mainCharacterTransform = GameObject.FindWithTag("Player").transform;
 
         outliner = GetComponent<Outline>();
         DisableOutline();
 
-        colliderBounds = GetComponent<Collider>().bounds;
-        setObjectProperties();
         setOutlineColorModes();
 
         sound = GetComponentInChildren<AudioSource>();
@@ -70,7 +73,11 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
     void setObjectProperties(){
         center = colliderBounds.center;
+        Debug.Log(center);
         radius = Mathf.Max(colliderBounds.size.x, colliderBounds.size.z) * 1.5f;
+    }
+    public Vector3 GetCenter(){
+        return center;
     }
     public virtual bool isInteractable(){
         return isPlayerInRadius();
