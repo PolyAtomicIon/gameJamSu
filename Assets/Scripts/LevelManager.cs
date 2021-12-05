@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             return;
         }
+        interactableItems[currentInteractableItem].dialogueWindow.Disable();
         currentInteractableItem++;
         EnableInteractableObject();
     }
