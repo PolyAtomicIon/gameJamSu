@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1908916217760610845}
   - component: {fileID: 1908916217760610834}
   m_Layer: 0
-  m_Name: Statue 2
+  m_Name: RawStatue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,4 +93,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 6239881831769578202, guid: 275ccf7e7d1d0624e967794f8c287eae, type: 3}
+  m_Mesh: {fileID: 8627820839835971777, guid: 50d8e23706a3bc7409e4f49b76a201e2, type: 3}
