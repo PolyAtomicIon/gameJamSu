@@ -10,7 +10,7 @@ public class rum : MonoBehaviour
 
         if(Input.GetKeyDown (KeyCode.E)){
           anim = GetComponent<Animation>();
-          anim.Play("rum");
+          anim.Play("Rummaging");
         }
     }
 }

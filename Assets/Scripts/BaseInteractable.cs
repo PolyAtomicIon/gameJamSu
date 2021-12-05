@@ -9,7 +9,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
 {
 
     Transform mainCharacterTransform;
-    Outline outliner;
+    public Outline outliner;
     Bounds colliderBounds;
     Vector3 center;
     float radius;
@@ -103,7 +103,8 @@ public class BaseInteractable : MonoBehaviour, Interactable
         // DisableOutline();
     }
     public void StopSound(){
-        sound.Stop();
+        if(sound)
+            sound.Stop();
     }
     public void PlaySound(){
         if(sound){

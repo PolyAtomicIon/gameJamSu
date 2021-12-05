@@ -51,7 +51,7 @@ public class Statue : BaseInteractable
     {
         return base.isInteractable() 
             && isPrerequisitesCompleted 
-            && !vfx.isPlaying;
+            && (vfx == null || !vfx.isPlaying);
             // && !sound.isPlaying;
     }
 

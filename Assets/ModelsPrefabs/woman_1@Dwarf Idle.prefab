@@ -383,6 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487117654981167849}
   - component: {fileID: 1380903993395342851}
+  - component: {fileID: 7586982896894218484}
   m_Layer: 0
   m_Name: woman_1@Dwarf Idle
   m_TagString: Untagged
@@ -425,6 +426,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &7586982896894218484
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299260286096183379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2377943702983712523
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +916,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8765948180819193337}
   - component: {fileID: 5773845815562744951}
+  - component: {fileID: 4379173401840683434}
+  - component: {fileID: 1348291453145763833}
+  - component: {fileID: 6528297650942910313}
   m_Layer: 0
   m_Name: woman
   m_TagString: Untagged
@@ -1029,6 +1047,55 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0017356277, y: -0.09503746, z: -0.036235087}
     m_Extent: {x: 0.37512958, y: 0.78381217, z: 0.17897731}
   m_DirtyAABB: 0
+--- !u!64 &4379173401840683434
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895894399357265280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &1348291453145763833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895894399357265280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &6528297650942910313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895894399357265280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8e0896665281746b98527aa52ed2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPrerequisitesCompleted: 0
+  dialogueWindow: {fileID: 0}
+  allDialogueText: 
+  finalText: 
+  isDialogueFinished: 0
 --- !u!1 &3928921855554355203
 GameObject:
   m_ObjectHideFlags: 0
