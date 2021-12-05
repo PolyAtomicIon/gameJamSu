@@ -212,6 +212,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11496530, guid: bd16b456f678c5b438c7721c0b8d5df2, type: 3}
+      propertyPath: m_Text
+      value: "SDU 18 \xA9 Shadow Fighters"
+      objectReference: {fileID: 0}
     - target: {fileID: 22496490, guid: bd16b456f678c5b438c7721c0b8d5df2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
