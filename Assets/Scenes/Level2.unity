@@ -2962,24 +2962,6 @@ MonoBehaviour:
   allDialogueText: 
   finalText: 
   isDialogueFinished: 0
---- !u!114 &123232870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123232867}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!4 &124666411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4117416892329658, guid: 61b8f3ab787fda74291bbde164182f3f,
@@ -3521,24 +3503,6 @@ MonoBehaviour:
   finalText: "\u041C\u0435\u0445\u0430\u043D\u0438\u043A: - \u0411\u0440\u043E, \u044F
     \u0441\u043A\u0430\u0437\u0430\u043B \u0432\u0441\u0435 \u0447\u0442\u043E \u0437\u043D\u0430\u044E;"
   isDialogueFinished: 0
---- !u!114 &157102070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157102068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!64 &157102071
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5599,12 +5563,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8610580849438208359, guid: 1705a8d2cd3a0874fbdf6759955ab2f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8800147247461592781, guid: 1705a8d2cd3a0874fbdf6759955ab2f8,
         type: 3}
       propertyPath: m_Name
       value: NeighbourWomanNpc
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8610580849438208359, guid: 1705a8d2cd3a0874fbdf6759955ab2f8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1705a8d2cd3a0874fbdf6759955ab2f8, type: 3}
 --- !u!1001 &287237204
 PrefabInstance:
@@ -22141,24 +22111,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 330318160}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1413631724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413631722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!64 &1413631725
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34234,7 +34186,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7185538422934169899}
   - component: {fileID: 3530621295583804484}
-  - component: {fileID: 509011519733695797}
   - component: {fileID: 509011519733695796}
   - component: {fileID: 509011519733695795}
   m_Layer: 0
@@ -34295,24 +34246,6 @@ MonoBehaviour:
   finalText: "\u041F\u0440\u043E\u0434\u0430\u0432\u0435\u0446: -\u042F \u0441\u043A\u0430\u0437\u0430\u043B 
     \u0432\u0441\u0435 \u0447\u0442\u043E \u0437\u043D\u0430\u044E;"
   isDialogueFinished: 0
---- !u!114 &509011519733695797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509011519733695794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &557000916280015769
 GameObject:
   m_ObjectHideFlags: 0

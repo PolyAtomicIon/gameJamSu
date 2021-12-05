@@ -22,10 +22,11 @@ public class LevelManager : MonoBehaviour
         rd.material = unactive;
     }
 
-
     void MoveToNextInteractableObject() {
+        if( currentInteractableItem + 1 > interactableItems.Length ){
+            return;
+        }
         if( currentInteractableItem + 1 >= interactableItems.Length ){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             return;
         }
         interactableItems[currentInteractableItem].dialogueWindow.Disable();

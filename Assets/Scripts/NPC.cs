@@ -4,12 +4,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(Outline))]
 public class NPC : BaseInteractable
 {
 
     public void Start() {
         base.Start();
+        outliner = null;
     }
 
     public override void Interact() {
@@ -37,7 +37,6 @@ public class NPC : BaseInteractable
 
     public void Update() {
         base.Update();
-        outliner.enabled = false;
     }
 
 }

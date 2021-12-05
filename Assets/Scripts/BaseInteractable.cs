@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(Outline))]
 public class BaseInteractable : MonoBehaviour, Interactable
 {
 
@@ -39,7 +38,8 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
         sound = GetComponentInChildren<AudioSource>();
 
-        dialogueWindow.Disable();
+        if( dialogueWindow != null )
+            dialogueWindow.Disable();
     }
 
     public void Update() {
@@ -53,7 +53,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
             DisableInteraction();
         }
         // Dialogue
-        if( dialogueWindow.isDialogueFinished ){
+        if( dialogueWindow != null && dialogueWindow.isDialogueFinished ){
             onDialogueFinished();
         }
     }
@@ -131,7 +131,8 @@ public class BaseInteractable : MonoBehaviour, Interactable
             outliner.enabled = false; 
     }
     void SetOutlineColor(string state){
-        outliner.OutlineColor = outlineColorModes[state];   
+        if(outliner != null)
+            outliner.OutlineColor = outlineColorModes[state];   
     }    
     
     public void SetPrerequisitesCompleted(){
