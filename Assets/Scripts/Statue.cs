@@ -41,7 +41,7 @@ public class Statue : BaseInteractable
             base.Interact();
             dialogueWindow.Enable();
             if( isDialogueFinished ){
-                allDialogueText = "Statue:I'm done;";
+                allDialogueText = finalText;
             }
             dialogueWindow.SetAllDialogueText(allDialogueText, isDialogueFinished);
         }
