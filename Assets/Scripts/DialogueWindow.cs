@@ -39,8 +39,11 @@ public class DialogueWindow : MonoBehaviour {
                 mainText.text = sentence[1];
             }
 
-            if( currentSentenceIndex + 1 >= sentences.Length - 1 ){
+            if( currentSentenceIndex + 1 == sentences.Length - 1 ){
                 closeButton.SetActive(true);
+            }
+
+            if( currentSentenceIndex + 1 > sentences.Length - 1 ){
                 isDialogueFinished = true;
             }
         }
@@ -53,7 +56,7 @@ public class DialogueWindow : MonoBehaviour {
         currentSentenceIndex--;
     }
     public void NextSentence(){
-        if( currentSentenceIndex + 1 >= sentences.Length - 1 ){
+        if( currentSentenceIndex + 1 > sentences.Length - 1 ){
             return;
         }
         currentSentenceIndex++;
