@@ -11,11 +11,14 @@ public class DialogueWindow : MonoBehaviour {
     public TMP_Text labelText;
     public TMP_Text mainText;
     public GameObject closeButton;
+    public rum cameraControl;
+    Vector3 tmp;
     int currentSentenceIndex = 0;
     string[] sentences;
     public bool isDialogueFinished = false;
 
     public void Start() {
+        cameraControl = GameObject.FindWithTag("Player").GetComponent<rum>();
     }
 
     public void SetAllDialogueText(string text, bool dialogueState){
@@ -63,13 +66,13 @@ public class DialogueWindow : MonoBehaviour {
     }
 
     public void Enable(){
-        // gameObject.SetActive(true);
         foreach (Transform child in transform)
             child.gameObject.SetActive(true);
     }
 
     public void Disable(){
-        // gameObject.SetActive(false);
+        if( cameraControl )
+            cameraControl.switchCameras(false);
         foreach (Transform child in transform)
             child.gameObject.SetActive(false);
     }

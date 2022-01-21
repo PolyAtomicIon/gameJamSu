@@ -710,6 +710,8 @@ MonoBehaviour:
   labelText: {fileID: 7543720485715939189}
   mainText: {fileID: 7543720485597894211}
   closeButton: {fileID: 1488561947}
+  dialogueCamera: {fileID: 0}
+  mainCamera: {fileID: 0}
   isDialogueFinished: 0
 --- !u!1 &7543720485497627875
 GameObject:
@@ -1025,9 +1027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Description\r\nStarter Assets are designed to work as a quick start into
-    prototyping and developing character controllers for various game genres, using
-    systems and methods that are easy to build and expand upon for different projects.\r\n\r\n\r"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

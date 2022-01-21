@@ -20,33 +20,35 @@ public class ObjectInteraction : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene(); 
             SceneManager.LoadScene(scene.name);
         }
+        if( Camera.main && Camera.main.enabled ){
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
-        if(Physics.Raycast(ray, out clickedObject))
-        {
-            // Debug.Log(clickedObject.collider.name);
-            
-            interactableObject = clickedObject.collider.GetComponent<Interactable>();
-            if( interactableObject != null ){
-                if( interactableObject.isInteractable() ){
-                    lastInteractableObject = interactableObject;
-                    if(Input.GetMouseButtonDown(0)){
-                        interactableObject.Interact();
-                    } 
+            if(Physics.Raycast(ray, out clickedObject))
+            {
+                // Debug.Log(clickedObject.collider.name);
+                
+                interactableObject = clickedObject.collider.GetComponent<Interactable>();
+                if( interactableObject != null ){
+                    if( interactableObject.isInteractable() ){
+                        lastInteractableObject = interactableObject;
+                        if(Input.GetMouseButtonDown(0)){
+                            interactableObject.Interact();
+                        } 
+                        else {
+                            interactableObject.Hover();
+                        }
+                    }
                     else {
-                        interactableObject.Hover();
+                        ResetInteractableObject();
                     }
                 }
-                else {
+                else{
                     ResetInteractableObject();
                 }
-            }
-            else{
-                ResetInteractableObject();
-            }
-        } 
+            } 
 
+        }
+     
     }
 
     void ResetInteractableObject(){

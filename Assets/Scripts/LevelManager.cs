@@ -88,14 +88,16 @@ public class LevelManager : MonoBehaviour
         float maxY = Screen.height - minY;
 
         // Temporary variable to store the converted position from 3D world point to 2D screen point
-        Vector2 pos = Camera.main.WorldToScreenPoint(targetPosition + offset);
+        if( Camera.main && Camera.main.enabled ){
+            Vector2 pos = Camera.main.WorldToScreenPoint(targetPosition + offset);
 
-        // Limit the X and Y positions
-        pos.x = Mathf.Clamp(pos.x, minX, maxX);
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+            // Limit the X and Y positions
+            pos.x = Mathf.Clamp(pos.x, minX, maxX);
+            pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
-        // Update the marker's position
-        img.transform.position = pos;
+            // Update the marker's position
+            img.transform.position = pos;
+        }
         // Change the meter text to the distance with the meter unit 'm'
         // meter.text = ((int)Vector3.Distance(target.position, transform.position)).ToString() + "m";
 

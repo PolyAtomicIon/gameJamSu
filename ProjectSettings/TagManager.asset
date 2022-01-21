@@ -8,6 +8,7 @@ TagManager:
   - InteractableObject
   - DialogueWindow
   - LevelManager
+  - DialogueCamera
   layers:
   - Default
   - TransparentFX
