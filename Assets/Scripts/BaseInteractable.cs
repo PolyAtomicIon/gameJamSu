@@ -73,7 +73,7 @@ public class BaseInteractable : MonoBehaviour, Interactable
 
     void setObjectProperties(){
         center = colliderBounds.center;
-        Debug.Log(center);
+        // Debug.Log(center);
         radius = Mathf.Max(colliderBounds.size.x, colliderBounds.size.z) * 1.75f;
     }
     public Vector3 GetCenter(){

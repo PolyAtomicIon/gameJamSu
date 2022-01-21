@@ -21,8 +21,10 @@ public class rum : MonoBehaviour
     }
 
     public void switchCameras(bool active = true){
-      mainCamera.enabled = !active;
-      dialogueCamera.enabled = active;
+      if( mainCamera )
+        mainCamera.enabled = !active;
+      if(dialogueCamera)
+        dialogueCamera.enabled = active;
     }
 
 }
