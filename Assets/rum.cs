@@ -9,7 +9,8 @@ public class rum : MonoBehaviour
     public Animation anim; 
 
     void Start(){
-      dialogueCamera.enabled = false;
+      if ( dialogueCamera ) 
+        dialogueCamera.enabled = false;
     }
 
     void Update () {
