@@ -24,6 +24,7 @@
 /[Aa]ssets/Plugins/Editor/JetBrains*
 /[Aa]ssets/FreePack
 /[Aa]ssets/PolygonSciFiCity
+/Assets/PolygonSciFiCity
 
 # Visual Studio cache directory
 .vs/
