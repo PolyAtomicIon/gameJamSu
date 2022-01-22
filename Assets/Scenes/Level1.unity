@@ -369,6 +369,16 @@ PrefabInstance:
       propertyPath: sprintInput
       value: 261
       objectReference: {fileID: 0}
+    - target: {fileID: 6037747507882641132, guid: 0ad080e74e8e3c54fbc90babc16bda09,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1343251576}
+    - target: {fileID: 6037747507882641132, guid: 0ad080e74e8e3c54fbc90babc16bda09,
+        type: 3}
+      propertyPath: dialogueCamera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6037747507882641135, guid: 0ad080e74e8e3c54fbc90babc16bda09,
         type: 3}
       propertyPath: m_RootOrder

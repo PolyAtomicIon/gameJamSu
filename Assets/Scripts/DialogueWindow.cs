@@ -66,6 +66,8 @@ public class DialogueWindow : MonoBehaviour {
     }
 
     public void Enable(){
+        if( cameraControl )
+            cameraControl.switchCameras(true);
         foreach (Transform child in transform)
             child.gameObject.SetActive(true);
     }

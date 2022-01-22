@@ -16,11 +16,14 @@ public class rum : MonoBehaviour
         if(Input.GetKeyDown (KeyCode.E)){
           anim = GetComponent<Animation>();
           // anim.Play("Rummaging");
-          switchCameras();
+          // switchCameras();
         }
     }
 
     public void switchCameras(bool active = true){
+      if(!dialogueCamera){
+        return;
+      }
       if( mainCamera )
         mainCamera.enabled = !active;
       if(dialogueCamera)
